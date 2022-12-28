@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>As2</title>
+
+  <!-- link to student JavaScript code --> 
+  <script src="As2.js"></script>
+
+  <!-- inline CSS could be embedded here -->
+
+ </head>
+ 
+ <body onload = "buildGiftList();">
+	<h1>Santa Claus and his list</h1>
+	<p>An interface to Santa's list!</p>
+	<h2>Add a child</h2>
+
+	<form id="childForm" method="get" onsubmit="return false;">
+	<br>Child's name <input type=text id=childName>
+
+	<br>Child has been
+	<select id="behaveMenu">
+		<option value="naughty" id="naughtyOption">naughty</option>
+		<option value="nice" id="niceOption">nice</option>
+	</select>
+
+	<br>Child will get
+	<!-- list of gift options in the menu will be updated in JavaScript -->
+	<select id="giftMenu">
+		<option value=0 id="giftlist0">Nothing</option>		
+	</select>
+	
+	<br><button type="button" onclick="addChild()">Add new child</button>
+	</form>
+
+
+
+	<h2>Add a gift</h2>
+	<form id="giftForm" method="get" onsubmit="return false;">
+	<br>Type of gift <input type=text id=giftName>
+	<br><button type="button" onclick="addGift()">Add new gift</button>
+	</form>
+
+
+	<h2>Lists</h2>
+	<!-- making a list -->
+	<button onclick="listAll()">List all children</button>
+
+	<!-- checking it twice! two sets of functions for finding who's naughty or nice -->
+
+	<!-- specific functions that list nice or naughty children -->
+	<button onclick="listNice()">List nice children</button>
+	<button onclick="listNaughty()">List naughty children</button>
+	
+	<!-- these use a single function, which should read the argument, and generate results accordingly -->
+	<button onclick="listChildren('nice')">List nice children (alternative version)</button>
+	<button onclick="listChildren('naughty')">List naughty children (alternative version)</button>
+
+	<!-- a list of possible gifts (any number of children can get the same gift -->
+	<button onclick="listGifts()">List gifts</button>
+	
+	<!-- a random new set of gifts -->
+	<button onclick="randomGifts()">Re-allocate new random gifts</button>
+	<br>
+	<div>
+		<table id="outputDiv" style="text-align: center; margin-left: auto; margin-right: auto;">
+			
+	</div>
+	
+
+ </body>
+</html>
